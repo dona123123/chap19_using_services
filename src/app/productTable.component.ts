@@ -1,12 +1,14 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
 import { Model } from "./repository.model";
 import { Product } from "./product.model";
+import { DiscountService } from "./discount.service";
 
 @Component({
     selector: "paProductTable",
     templateUrl: "productTable.component.html"
 })
-export class ProductTableComponent {    
+export class ProductTableComponent {  
+    discounter: DiscountService = new DiscountService();  
 
     @Input("model")
     dataModel: Model;

@@ -1,4 +1,5 @@
 // chap 19 start.
+// 1/13  p473
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { ProductComponent } from "./component";
@@ -17,6 +18,8 @@ import { PaCategoryFilterPipe } from "./categoryFilter.pipe";
 import { LOCALE_ID } from "@angular/core";
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { PaDiscountDisplayComponent } from "./discountDisplay.component";
+import { PaDiscountEditorComponent } from "./discountEditor.component";
 
 registerLocaleData(localeFr);
 
@@ -26,7 +29,8 @@ registerLocaleData(localeFr);
         PaStructureDirective, PaIteratorDirective,
         PaCellColor, PaCellColorSwitcher, ProductTableComponent,
         ProductFormComponent, PaToggleView, PaAddTaxPipe,
-        PaCategoryFilterPipe],
+        PaCategoryFilterPipe,
+        PaDiscountDisplayComponent, PaDiscountEditorComponent],
     //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
     bootstrap: [ProductComponent]
 })
