@@ -1,5 +1,5 @@
 // chap 19 start.
-// 1/13  p473
+// 1/13  p473  1/14 p486  1/14 done
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { ProductComponent } from "./component";
@@ -20,6 +20,11 @@ import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { PaDiscountDisplayComponent } from "./discountDisplay.component";
 import { PaDiscountEditorComponent } from "./discountEditor.component";
+import { DiscountService } from "./discount.service";
+import { paDiscountPipe } from "./discount.pipe";
+import { PaDiscountAmountDirective } from "./discountAmount.directive";
+import { SimpleDataSource } from "./datasource.model";
+import { Model } from "./repository.model";
 
 registerLocaleData(localeFr);
 
@@ -30,8 +35,9 @@ registerLocaleData(localeFr);
         PaCellColor, PaCellColorSwitcher, ProductTableComponent,
         ProductFormComponent, PaToggleView, PaAddTaxPipe,
         PaCategoryFilterPipe,
-        PaDiscountDisplayComponent, PaDiscountEditorComponent],
-    //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+        PaDiscountDisplayComponent, PaDiscountEditorComponent,
+        paDiscountPipe, PaDiscountAmountDirective ],
+    providers: [DiscountService, SimpleDataSource, Model],
     bootstrap: [ProductComponent]
 })
 export class AppModule { }

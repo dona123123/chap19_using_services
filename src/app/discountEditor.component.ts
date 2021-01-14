@@ -9,6 +9,7 @@ import { DiscountService } from "./discount.service";
                </div>`
 })
 export class PaDiscountEditorComponent {
-    @Input("discounter")
-    discounter: DiscountService;
+    // @Input("discounter")
+    // discounter: DiscountService;
+    constructor( private discounter: DiscountService){}
 }
